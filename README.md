@@ -1,4 +1,5 @@
 Nama Project : Aplikasi Tugas Siswa
+
 Penjelasan Project : Aplikasi Pengelola Tugas Mahasiswa adalah sebuah aplikasi yang dirancang untuk membantu mahasiswa dalam mengelola dan memantau tugas-tugas mereka dengan lebih efisien. Aplikasi ini menyediakan berbagai fitur yang memungkinkan pengguna untuk mengisi data diri dan mencatat tugas-tugas mereka sehingga bisa memonitor semua tugas yang harus diselesaikan selama masa studi mereka.
 ![p](https://github.com/fahmarosyidah/FinalProject_PAM/assets/115076270/084f57f4-2fd9-457b-b191-9742ce26f75b) 
 Use Case 
@@ -22,6 +23,7 @@ Pengguna dapat melihat detail lengkap tugas berupa nama, atau judul tugas, deskr
 Pengguna dapat mengedit detail dari sebuah tugas yang sudah tersimpan di dalam sistem.
 -Hapus Tugas
 Pengguna dapat menghapus sebuah tugas yang sudah selesai.
+
 Detail Pembagian 
 Fahma Rosyidah (20210140030) : Bagian Tugas
 Nur Azizah (20210140155) : Bagian Mahasiswa
