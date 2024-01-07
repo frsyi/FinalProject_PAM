@@ -28,4 +28,5 @@ Pengguna dapat menghapus sebuah tugas yang sudah selesai.
 Detail Pembagian 
 
 Fahma Rosyidah (20210140030) : Bagian Tugas
+
 Nur Azizah (20210140155) : Bagian Mahasiswa
