@@ -11,3 +11,13 @@ data class Mahasiswa(
     val nim: String,
     val semester: String
 )
+
+@Entity(tableName = "tblTugas")
+data class Tugas(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val mahasiswaId: Int,
+    val namaTugas: String,
+    val detailTugas: String,
+    val deadline: String
+)
