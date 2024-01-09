@@ -1,5 +1,32 @@
 <resources>
-    <string name="app_name">FinalProject_PAM</string>
-    <string name="nama">Nama: </string>
-
+    <string name="app_name">Pengelola Tugas Mahasiswa</string>
+    <string name="entry_mahasiswa">Tambah Mahasiswa</string>
+    <string name="deskripsi_no_mahasiswa">Tidak ada Data Mahasiswa. Tap + untuk menambah Data</string>
+    <string name="namaMhs">Nama Mahasiswa*</string>
+    <string name="nim">NIM*</string>
+    <string name="semester">Semester*</string>
+    <string name="namaMhs1">Nama Mahasiswa :</string>
+    <string name="nim1">NIM :</string>
+    <string name="semester1">Semester :</string>
+    <string name="entry_tugas">Tambah Tugas</string>
+    <string name="deskripsi_no_item">Tidak ada Tugas. Tap + untuk menambah Tugas</string>
+    <string name="namaTugas">Judul Tugas*</string>
+    <string name="deskripsi">Deskripsi Tugas*</string>
+    <string name="deadline">Deadline Tugas*</string>
+    <string name="namaTugas1">Judul Tugas :</string>
+    <string name="deskripsi1">Deskripsi Tugas :</string>
+    <string name="deadline1">Deadline Tugas :</string>
+    <string name="required_field">* required fields</string>
+    <string name="btn_submit">Submit</string>
+    <string name="detail_mahasiswa">Detail Mahasiswa</string>
+    <string name="edit_mahasiswa">Edit Mahasiswa</string>
+    <string name="detail_tugas">Detail Tugas</string>
+    <string name="edit_tugas">Edit Tugas</string>
+    <string name="back">Back</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="delete">Hapus</string>
+    <string name="update">Edit</string>
+    <string name="attention">Perhatian</string>
+    <string name="tanya">Apakah anda yakin menghapus ini?</string>
 </resources>
