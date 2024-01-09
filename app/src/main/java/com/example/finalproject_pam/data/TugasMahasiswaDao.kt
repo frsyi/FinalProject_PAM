@@ -25,3 +25,21 @@ interface MahasiswaDao {
     @Query("SELECT * from tblMahasiswa ORDER BY nama ASC")
     fun getAllMahasiswa(): Flow<List<Mahasiswa>>
 }
+
+@Dao
+interface TugasDao {
+    @Insert
+    suspend fun insertTugas(tugas: Tugas)
+
+    @Update
+    suspend fun updateTugas(tugas: Tugas)
+
+    @Delete
+    suspend fun deleteTugas(tugas: Tugas)
+
+    @Query("SELECT * FROM tblTugas WHERE mahasiswaId = :mahasiswaId")
+    fun getAllTugasByMahasiswaId(mahasiswaId: Int): Flow<List<Tugas>>
+
+    @Query("SELECT * FROM tblTugas WHERE id = :tugasId")
+    fun getTugasById(tugasId: Int): Flow<Tugas?>
+}
