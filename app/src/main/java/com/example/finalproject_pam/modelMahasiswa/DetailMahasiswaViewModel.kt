@@ -14,7 +14,22 @@ class DetailsMahasiswaViewModel(
     savedStateHandle: SavedStateHandle,
     private val repositoryMahasiswa: RepositoryMahasiswa
 ) : ViewModel() {
+    private val mahasiswaId: Int = checkNotNull(savedStateHandle[DetailMahasiswaDestination.mahasiswaIdArg])
 
+    val uiState: StateFlow<ItemDetailsMahasiswaUiState> = repositoryMahasiswa.getMahasiswaStream(mahasiswaId)
+        .filterNotNull()
+        .map {
+            ItemDetailsMahasiswaUiState(detailMahasiswa = it.toDetailMahasiswa())
+        }
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
+            initialValue = ItemDetailsMahasiswaUiState()
+        )
+
+    suspend fun deleteItem() {
+        repositoryMahasiswa.deleteMahasiswa(uiState.value.detailMahasiswa.toMahasiswa())
+    }
 
     companion object{
         private const val TIMEOUT_MILLIS = 5_000L
