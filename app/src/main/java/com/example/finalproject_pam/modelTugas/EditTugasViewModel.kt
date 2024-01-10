@@ -7,6 +7,9 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.finalproject_pam.repository.RepositoryTugas
+import com.example.finalproject_pam.ui.halamanTugas.EditTugasDestination
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class EditTugasViewModel(
@@ -15,6 +18,17 @@ class EditTugasViewModel(
 ) : ViewModel() {
     var tugasUiState by mutableStateOf(UIStateTugas())
         private set
+
+    private val itemId: Int = checkNotNull(savedStateHandle[EditTugasDestination.itemIdArg])
+
+    init {
+        viewModelScope.launch {
+            tugasUiState = repositoryTugas.getTugasStream(itemId)
+                .filterNotNull()
+                .first()
+                .toUiStateTugas(true)
+        }
+    }
 
     suspend fun updateTugas() {
         if (validasiInput(tugasUiState.detailTugas)) {
