@@ -2,6 +2,8 @@ package com.example.finalproject_pam.ui.halamanMahasiswa
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.finalproject_pam.R
@@ -28,5 +30,8 @@ fun DetailMahasiswaScreen(
     viewModel: DetailsMahasiswaViewModel = viewModel(factory = PenyediaViewModel.Factory),
     viewModelTugas: HomeTugasViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
+    val uiState = viewModel.uiState.collectAsState()
+//    val uiTugasState = viewModelTugas.uiTugasState.collectAsState()
 
+    val coroutineScope = rememberCoroutineScope()
 }
