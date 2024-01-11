@@ -123,6 +123,7 @@ fun FormInputMahasiswa(
         OutlinedTextField(
             value = detailMahasiswa.nim,
             onValueChange = {onValueChange(detailMahasiswa.copy(nim = it))},
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.nim)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
