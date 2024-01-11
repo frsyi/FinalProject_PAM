@@ -29,6 +29,7 @@ import com.example.finalproject_pam.modelTugas.DetailTugas
 import com.example.finalproject_pam.modelTugas.EntryTugasViewModel
 import com.example.finalproject_pam.modelTugas.UIStateTugas
 import com.example.finalproject_pam.navigasi.DestinasiNavigasi
+import com.example.finalproject_pam.navigasi.TugasToAppBar
 import kotlinx.coroutines.launch
 
 object DestinasiEntryTugas: DestinasiNavigasi {
@@ -47,7 +48,13 @@ fun EntryTugasScreen(
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold (
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-
+        topBar = {
+            TugasToAppBar(
+                title = stringResource(DestinasiEntryTugas.titleRes),
+                canNavigateBack = true,
+                scrollBehavior = scrollBehavior
+            )
+        }
     ){innerPadding ->
         EntryTugasBody(
             uiStateTugas = viewModel.uiStateTugas,

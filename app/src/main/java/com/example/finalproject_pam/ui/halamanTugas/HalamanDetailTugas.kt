@@ -41,6 +41,7 @@ import com.example.finalproject_pam.modelTugas.DetailTugasViewModel
 import com.example.finalproject_pam.modelTugas.ItemDetailTugasUiState
 import com.example.finalproject_pam.modelTugas.toTugas
 import com.example.finalproject_pam.navigasi.DestinasiNavigasi
+import com.example.finalproject_pam.navigasi.TugasToAppBar
 import kotlinx.coroutines.launch
 
 object DetailTugasDestination : DestinasiNavigasi {
@@ -61,6 +62,13 @@ fun DetailTugasScreen(
     val uiState = viewModel.uiTugasState.collectAsState()
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
+        topBar = {
+            TugasToAppBar(
+                title = stringResource(DetailTugasDestination.titleRes),
+                canNavigateBack = true,
+                navigateUp = navigateBack
+            )
+        },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { navigateToEditItem(uiState.value.detailTugas.id) },
@@ -72,8 +80,7 @@ fun DetailTugasScreen(
                     contentDescription = stringResource(R.string.edit_tugas)
                 )
             }
-        }
-        ,
+        },
         modifier = modifier
     ) {innerPadding ->
         ItemDetailsBody(

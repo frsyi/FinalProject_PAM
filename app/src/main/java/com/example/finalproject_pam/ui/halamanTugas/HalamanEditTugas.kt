@@ -6,11 +6,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.finalproject_pam.R
 import com.example.finalproject_pam.modelMahasiswa.PenyediaViewModel
 import com.example.finalproject_pam.modelTugas.EditTugasViewModel
 import com.example.finalproject_pam.navigasi.DestinasiNavigasi
+import com.example.finalproject_pam.navigasi.TugasToAppBar
 import kotlinx.coroutines.launch
 
 object EditTugasDestination : DestinasiNavigasi {
@@ -30,6 +32,13 @@ fun ItemEditTugasScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
+        topBar = {
+            TugasToAppBar(
+                title = stringResource(EditTugasDestination.titleRes),
+                canNavigateBack = true,
+                navigateUp = onNavigateUp
+            )
+        },
         modifier = modifier
     ) { innerPadding ->
         EntryTugasBody(
