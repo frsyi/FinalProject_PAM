@@ -41,6 +41,7 @@ object DestinasiEntryMahasiswa: DestinasiNavigasi {
 @Composable
 fun EntryMahasiswaScreen(
     navigateBack: () -> Unit,
+    onNavigateUp: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: EntryMahasiswaViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
@@ -52,7 +53,8 @@ fun EntryMahasiswaScreen(
             MahasiswaToAppBar(
                 title = stringResource(DestinasiEntryMahasiswa.titleRes),
                 canNavigateBack = true,
-                scrollBehavior = scrollBehavior
+                scrollBehavior = scrollBehavior,
+                navigateUp = onNavigateUp
             )
         }
     ){innerPadding ->
