@@ -6,6 +6,10 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.finalproject_pam.AplikasiTugasMahasiswa
+import com.example.finalproject_pam.modelTugas.DetailTugasViewModel
+import com.example.finalproject_pam.modelTugas.EditTugasViewModel
+import com.example.finalproject_pam.modelTugas.EntryTugasViewModel
+import com.example.finalproject_pam.modelTugas.HomeTugasViewModel
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
@@ -25,6 +29,27 @@ object PenyediaViewModel {
             EditMahasiswaViewModel(
                 createSavedStateHandle(),
                 aplikasiTugasMahasiswa().container.repositoryMahasiswa
+            )
+        }
+
+        initializer {
+            HomeTugasViewModel(
+                createSavedStateHandle(),
+                aplikasiTugasMahasiswa().container.repositoryTugas)
+        }
+        initializer {
+            EntryTugasViewModel(aplikasiTugasMahasiswa().container.repositoryTugas)
+        }
+        initializer {
+            DetailTugasViewModel(
+                createSavedStateHandle(),
+                aplikasiTugasMahasiswa().container.repositoryTugas
+            )
+        }
+        initializer {
+            EditTugasViewModel(
+                createSavedStateHandle(),
+                aplikasiTugasMahasiswa().container.repositoryTugas
             )
         }
     }
