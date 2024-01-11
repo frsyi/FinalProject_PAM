@@ -77,7 +77,7 @@ fun DetailMahasiswaScreen(
     viewModelTugas: HomeTugasViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ){
     val uiState = viewModel.uiState.collectAsState()
-//    val uiTugasState = viewModelTugas.uiTugasState.collectAsState()
+   // val uiTugasState = viewModelTugas.uiTugasState.collectAsState()
 
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
@@ -96,22 +96,10 @@ fun DetailMahasiswaScreen(
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
-                    contentDescription = stringResource(R.string.detail_tugas)
+                    contentDescription = stringResource(R.string.entry_tugas)
                 )
             }
         },
-//        floatingActionButton = {
-//            FloatingActionButton(
-//                onClick = { navigateToEditItem(uiState.value.detailMahasiswa.id) },
-//                shape = MaterialTheme.shapes.medium,
-//                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
-//            ) {
-//                Icon(
-//                    imageVector = Icons.Default.Edit,
-//                    contentDescription = stringResource(R.string.edit_mahasiswa)
-//                )
-//            }
-//        }
 
         modifier = modifier
     ) {innerPadding ->
@@ -129,14 +117,6 @@ fun DetailMahasiswaScreen(
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
         )
-//        val uiStateTugas by viewModelTugas.homeTugasUiState.collectAsState()
-//        BodyHomeTugas(
-//            itemTugas = uiStateTugas.listTugas,
-//            modifier = Modifier
-//                .padding(innerPadding)
-//                .fillMaxSize(),
-//            onTugasClick = onDetailClick
-//        )
     }
 }
 
@@ -373,10 +353,3 @@ fun DataTugasPreview() {
     val sampleTugas = Tugas(id = 1, mahasiswaId = 1, namaTugas = "PAM", detailTugas = "Membuat operasi CRUD", deadline = "01-01-2025")
     DataTugas(tugas = sampleTugas)
 }
-
-
-
-
-
-
-
